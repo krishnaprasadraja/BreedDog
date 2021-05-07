@@ -1,8 +1,5 @@
 package in.breeddogs;
 import org.junit.Test;
-import static org.junit.Assert.*;
-
-import org.junit.Test;
 
 public class DisplayAllUserTest {
 
@@ -12,33 +9,10 @@ public class DisplayAllUserTest {
 	@Test
 	public void ValidUserEmailAndPassword() {
 		
-		String email="kpraja956@gmail.com";
-		String Password="kpraja123";
-		UserDetails.addUser(email, Password);
+		UserDetails.addUser("kpraja956@gmail.com", "kpraja12");
+		UserDetails.addUser("madhan123@gmail.com", "madhan12");
+		UserDetails.addUser("maha8976@gmail.com", "mahamaha");
 		UserDetails.displayAllUsers();
 	}
 	
-	/**
-	 * To add with invalid mail and password and display
-	 */
-	@Test
-	public void InvalidUserEmailAndValidPassword() {
-		
-		String email="@kpraja.gmail.com";
-		String Password="kpraja123";
-		UserDetails.addUser(email, Password);
-		UserDetails.displayAllUsers();
-	}
-	
-	/**
-	 * To add with invalid mail and password and display
-	 */
-	@Test
-	public void ValidUserEmailAndInValidPassword() {
-		
-		String email="kpraja956@gmail.com";
-		String Password="kpr";
-		UserDetails.addUser(email, Password);
-		UserDetails.displayAllUsers();
-	}
 }

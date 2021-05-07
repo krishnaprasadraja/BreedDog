@@ -16,9 +16,9 @@ public class SearchDetailsTest {
 	{
 		
 		String email="kpraja956@gmail.com";
-		String password="kpraja123";
+		String password="kpraja12";
 		UserDetails.addUser(email, password);
-		boolean isContain=UserDetails.searchDetails(email,password );
+		boolean isContain=Validation.searchDetails(email );
 		assertTrue(isContain);
 		
 	}
@@ -32,9 +32,8 @@ public class SearchDetailsTest {
 		public void SearchInValidMailAndPassword()
 		{
 			
-			String email="kpraja956@gmail.com";
-			String password="kpraja123";
-			boolean isContain=UserDetails.searchDetails(email,password );
+			String email="kpraja@gmail.com";
+			boolean isContain=Validation.searchDetails(email );
 			assertFalse(isContain);
 			
 		}

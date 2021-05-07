@@ -10,7 +10,7 @@ public class UserDetails {
 		/**
 		 * Hash map to store user mail id and password
 		 */
-	static HashMap<String, String> userList = new HashMap<String, String>();
+	public static HashMap<String, String> userList = new HashMap<String, String>();
 		
 		/**
 		 * Add user details to list
@@ -24,7 +24,7 @@ public class UserDetails {
 		{
 			boolean addedStatus=false;
 			
-			if(EmailValidation.isEmailValid(userEmail)==true  && searchDetails(userEmail,passWord)==false && passWord.length() >=8)
+			if(Validation.isEmailValid(userEmail)  && Validation.searchDetails(userEmail)==false && passWord.length() ==8)
 			{
 			userList.put(userEmail, passWord);
 			addedStatus=true;
@@ -54,25 +54,7 @@ public class UserDetails {
 		}
 		
 		
-		/**
-		 * Method to check whether the given mail id & password in the list
-		 * 
-		 * @param userEmail
-		 * @param password
-		 * return
-		 */
 		
-		
-		public static boolean searchDetails(String userEmail,String password)
-		{
-			
-			boolean validUserId = false;
-			if(userList.containsKey(userEmail) && userList.containsValue(password)) {
-				validUserId = true;
-			}
-
-			return validUserId;
-		}
 		
 		/**
 		 * This method is used to validate the user mail and password for login
@@ -85,7 +67,7 @@ public class UserDetails {
 		{
 			boolean isValid=false;
 			
-			if(UserLoginValidation.userloginValidation(email,password)==true)
+			if(Validation.userloginValidation(email,password)==true)
 			{
 				isValid=true;
 			}

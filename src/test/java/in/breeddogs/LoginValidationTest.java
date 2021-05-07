@@ -4,10 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 public class LoginValidationTest {
 
 	@Test
@@ -15,9 +11,8 @@ public class LoginValidationTest {
 	
 		public void validMailAndPassword() {
 			
-			String email="kpraja956@gmail.com";
-			String Password="kpraja";
-			boolean loginStatus=UserDetails.loginValidation(email, Password);
+			UserDetails.addUser("kpraja956@gmail.com", "kpraja12");
+			boolean loginStatus=UserDetails.loginValidation("kpraja956@gmail.com", "kpraja12");
 			assertTrue(loginStatus);
 			
 		}
@@ -27,9 +22,8 @@ public class LoginValidationTest {
 	
 		public void inValidMail() {
 			
-			String email="invalidMail@gmail.com";
-			String Password="kpraja123";
-			boolean loginStatus=UserDetails.loginValidation(email, Password);
+			UserDetails.addUser("kpraja956@gmail.com", "kpraja12");
+			boolean loginStatus=UserDetails.loginValidation("invalidMail@gmail.com", "kpraja123");
 			assertFalse(loginStatus);
 			
 		}
@@ -39,9 +33,8 @@ public class LoginValidationTest {
 	
 		public void inCorrectMail() {
 			
-			String email="kpraja@956.gmail.com";
-			String Password="kpraja";
-			boolean loginStatus=UserDetails.loginValidation(email, Password);
+		    UserDetails.addUser("kpraja956@gmail.com", "kpraja12");
+			boolean loginStatus=UserDetails.loginValidation("kpraja@956.gmail.com", "kpraja");
 			assertFalse(loginStatus);
 			
 		}
@@ -51,9 +44,8 @@ public class LoginValidationTest {
 	
 		public void inValidPassword() {
 			
-			String email="kpraja956@gmail.com";
-			String Password="kpr";
-			boolean loginStatus=UserDetails.loginValidation(email, Password);
+	        UserDetails.addUser("kpraja956@gmail.com", "kpraja12");
+			boolean loginStatus=UserDetails.loginValidation("kpraja956@gmail.com", "kpr");
 			assertFalse(loginStatus);
 			
 		}

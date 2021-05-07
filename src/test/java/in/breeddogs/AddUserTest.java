@@ -13,8 +13,8 @@ public class AddUserTest {
 	@Test
 	public void ValidUserEmail() {
 		
-		String email="kpraja9536gmail.com";
-		String Password="kpraja123";
+		String email="kpraja9536@gmail.com";
+		String Password="12345678";
 		boolean registerStatus=UserDetails.addUser(email, Password);
 		assertTrue(registerStatus);
 		

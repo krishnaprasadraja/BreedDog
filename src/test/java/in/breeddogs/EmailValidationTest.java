@@ -15,7 +15,7 @@ public class EmailValidationTest {
 	public void ValidEmail() {
 		
 		String email="kpraja956@gmail.com";
-		boolean result=EmailValidation.isEmailValid(email);
+		boolean result=Validation.isEmailValid(email);
 		assertTrue(result);
 	}
 
@@ -28,7 +28,7 @@ public class EmailValidationTest {
 		public void InValidEmail() {
 			
 			String email="@kpraja.gmail.com";
-			boolean result=EmailValidation.isEmailValid(email);
+			boolean result=Validation.isEmailValid(email);
 			assertFalse(result);
 		}
 }
